@@ -28,7 +28,6 @@ namespace QLSinhVien
                 frm_admin f = new frm_admin();
                 f.Show();
                 this.Hide();
-
             }
         }
     }
