@@ -1,246 +1,180 @@
-﻿namespace QLSinhVien
+﻿using System.Windows.Forms;
+using System.Drawing;
+
+namespace QLSinhVien
 {
     partial class frm_admin
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
+            if (disposing && (components != null)) components.Dispose();
             base.Dispose(disposing);
         }
+
         private void InitializeComponent()
         {
-            this.dgv_Admin_SinhVien = new System.Windows.Forms.DataGridView();
-            this.pnl_Left = new System.Windows.Forms.Panel();
-            this.btn_LamMoi = new System.Windows.Forms.Button();
-            this.btn_Xoa = new System.Windows.Forms.Button();
-            this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Them = new System.Windows.Forms.Button();
-            this.txt_Lop = new System.Windows.Forms.TextBox();
-            this.lbl_Lop = new System.Windows.Forms.Label();
-            this.txt_NoiSinh = new System.Windows.Forms.TextBox();
-            this.lbl_NoiSinh = new System.Windows.Forms.Label();
-            this.dtp_NgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.lbl_NgaySinh = new System.Windows.Forms.Label();
-            this.txt_HoTen = new System.Windows.Forms.TextBox();
-            this.lbl_HoTen = new System.Windows.Forms.Label();
-            this.txt_MaSV = new System.Windows.Forms.TextBox();
-            this.lbl_MaSV = new System.Windows.Forms.Label();
-            this.lbl_Title = new System.Windows.Forms.Label();
+            this.dgv_Admin_SinhVien = new DataGridView();
+            this.pnl_Left = new Panel();
+            this.pnl_Search = new Panel();
+            this.lbl_Search = new Label();
+            this.txt_Search = new TextBox();
+            this.btn_Search = new Button();
+            this.pnl_Right = new Panel();
+            this.lbl_Title = new Label();
+            this.lbl_MaSV = new Label();
+            this.txt_MaSV = new TextBox();
+            this.lbl_HoSV = new Label();
+            this.txt_HoSV = new TextBox();
+            this.lbl_TenSV = new Label();
+            this.txt_TenSV = new TextBox();
+            this.lbl_Phai = new Label();
+            this.chk_Phai = new CheckBox();
+            this.lbl_NgaySinh = new Label();
+            this.dtp_NgaySinh = new DateTimePicker();
+            this.lbl_NoiSinh = new Label();
+            this.txt_NoiSinh = new TextBox();
+            this.lbl_MaKH = new Label();
+            this.cbo_MaKH = new ComboBox();
+            this.lbl_HocBong = new Label();
+            this.txt_HocBong = new TextBox();
+            this.btn_Them = new Button();
+            this.btn_Sua = new Button();
+            this.btn_Xoa = new Button();
+            this.btn_LamMoi = new Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Admin_SinhVien)).BeginInit();
             this.pnl_Left.SuspendLayout();
+            this.pnl_Search.SuspendLayout();
+            this.pnl_Right.SuspendLayout();
             this.SuspendLayout();
-            // 
+
+            // pnl_Search - thanh tim kiem phia tren DataGridView
+            this.pnl_Search.Dock = DockStyle.Top;
+            this.pnl_Search.Size = new Size(680, 45);
+            this.pnl_Search.Name = "pnl_Search";
+            this.pnl_Search.BackColor = Color.WhiteSmoke;
+            this.pnl_Search.Controls.Add(this.lbl_Search);
+            this.pnl_Search.Controls.Add(this.txt_Search);
+            this.pnl_Search.Controls.Add(this.btn_Search);
+
+            this.lbl_Search.Location = new Point(10, 13); this.lbl_Search.Size = new Size(60, 20); this.lbl_Search.Text = "Tim kiem:";
+            this.txt_Search.Location = new Point(75, 10); this.txt_Search.Size = new Size(480, 22); this.txt_Search.Name = "txt_Search";
+            this.btn_Search.Location = new Point(565, 8); this.btn_Search.Size = new Size(80, 28); this.btn_Search.Text = "Tim"; this.btn_Search.Name = "btn_Search"; this.btn_Search.BackColor = Color.SteelBlue; this.btn_Search.ForeColor = Color.White;
+
             // dgv_Admin_SinhVien
-            // 
-            this.dgv_Admin_SinhVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Admin_SinhVien.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Admin_SinhVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Admin_SinhVien.BackgroundColor = Color.White;
             this.dgv_Admin_SinhVien.ColumnHeadersHeight = 29;
-            this.dgv_Admin_SinhVien.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgv_Admin_SinhVien.Location = new System.Drawing.Point(350, 0);
+            this.dgv_Admin_SinhVien.Dock = DockStyle.Fill;
             this.dgv_Admin_SinhVien.Name = "dgv_Admin_SinhVien";
             this.dgv_Admin_SinhVien.RowHeadersWidth = 51;
-            this.dgv_Admin_SinhVien.Size = new System.Drawing.Size(650, 600);
             this.dgv_Admin_SinhVien.TabIndex = 0;
-            // 
+            this.dgv_Admin_SinhVien.ReadOnly = true;
+            this.dgv_Admin_SinhVien.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            // pnl_Right - chua pnl_Search + dgv
+            this.pnl_Right.Dock = DockStyle.Fill;
+            this.pnl_Right.Name = "pnl_Right";
+            this.pnl_Right.Controls.Add(this.dgv_Admin_SinhVien);
+            this.pnl_Right.Controls.Add(this.pnl_Search);
+
             // pnl_Left
-            // 
-            this.pnl_Left.Controls.Add(this.btn_LamMoi);
-            this.pnl_Left.Controls.Add(this.btn_Xoa);
-            this.pnl_Left.Controls.Add(this.btn_Sua);
-            this.pnl_Left.Controls.Add(this.btn_Them);
-            this.pnl_Left.Controls.Add(this.txt_Lop);
-            this.pnl_Left.Controls.Add(this.lbl_Lop);
-            this.pnl_Left.Controls.Add(this.txt_NoiSinh);
-            this.pnl_Left.Controls.Add(this.lbl_NoiSinh);
-            this.pnl_Left.Controls.Add(this.dtp_NgaySinh);
-            this.pnl_Left.Controls.Add(this.lbl_NgaySinh);
-            this.pnl_Left.Controls.Add(this.txt_HoTen);
-            this.pnl_Left.Controls.Add(this.lbl_HoTen);
-            this.pnl_Left.Controls.Add(this.txt_MaSV);
-            this.pnl_Left.Controls.Add(this.lbl_MaSV);
-            this.pnl_Left.Controls.Add(this.lbl_Title);
-            this.pnl_Left.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl_Left.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Left.Dock = DockStyle.Left;
+            this.pnl_Left.Size = new Size(370, 650);
             this.pnl_Left.Name = "pnl_Left";
-            this.pnl_Left.Size = new System.Drawing.Size(350, 600);
             this.pnl_Left.TabIndex = 1;
-            // 
-            // btn_LamMoi
-            // 
-            this.btn_LamMoi.BackColor = System.Drawing.Color.LightGray;
-            this.btn_LamMoi.Location = new System.Drawing.Point(175, 490);
-            this.btn_LamMoi.Name = "btn_LamMoi";
-            this.btn_LamMoi.Size = new System.Drawing.Size(130, 40);
-            this.btn_LamMoi.TabIndex = 0;
-            this.btn_LamMoi.Text = "Làm mới";
-            this.btn_LamMoi.UseVisualStyleBackColor = false;
-            // 
-            // btn_Xoa
-            // 
-            this.btn_Xoa.BackColor = System.Drawing.Color.LightCoral;
-            this.btn_Xoa.Location = new System.Drawing.Point(25, 490);
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(130, 40);
-            this.btn_Xoa.TabIndex = 1;
-            this.btn_Xoa.Text = "Xóa";
-            this.btn_Xoa.UseVisualStyleBackColor = false;
-            // 
-            // btn_Sua
-            // 
-            this.btn_Sua.BackColor = System.Drawing.Color.LightGreen;
-            this.btn_Sua.Location = new System.Drawing.Point(175, 430);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(130, 40);
-            this.btn_Sua.TabIndex = 2;
-            this.btn_Sua.Text = "Sửa";
-            this.btn_Sua.UseVisualStyleBackColor = false;
-            // 
-            // btn_Them
-            // 
-            this.btn_Them.BackColor = System.Drawing.Color.LightBlue;
-            this.btn_Them.Location = new System.Drawing.Point(25, 430);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(130, 40);
-            this.btn_Them.TabIndex = 3;
-            this.btn_Them.Text = "Thêm";
-            this.btn_Them.UseVisualStyleBackColor = false;
-            // 
-            // txt_Lop
-            // 
-            this.txt_Lop.Location = new System.Drawing.Point(25, 375);
-            this.txt_Lop.Name = "txt_Lop";
-            this.txt_Lop.Size = new System.Drawing.Size(280, 22);
-            this.txt_Lop.TabIndex = 4;
-            // 
-            // lbl_Lop
-            // 
-            this.lbl_Lop.Location = new System.Drawing.Point(25, 350);
-            this.lbl_Lop.Name = "lbl_Lop";
-            this.lbl_Lop.Size = new System.Drawing.Size(100, 23);
-            this.lbl_Lop.TabIndex = 5;
-            this.lbl_Lop.Text = "Lớp:";
-            // 
-            // txt_NoiSinh
-            // 
-            this.txt_NoiSinh.Location = new System.Drawing.Point(25, 305);
-            this.txt_NoiSinh.Name = "txt_NoiSinh";
-            this.txt_NoiSinh.Size = new System.Drawing.Size(280, 22);
-            this.txt_NoiSinh.TabIndex = 6;
-            // 
-            // lbl_NoiSinh
-            // 
-            this.lbl_NoiSinh.Location = new System.Drawing.Point(25, 280);
-            this.lbl_NoiSinh.Name = "lbl_NoiSinh";
-            this.lbl_NoiSinh.Size = new System.Drawing.Size(100, 23);
-            this.lbl_NoiSinh.TabIndex = 7;
-            this.lbl_NoiSinh.Text = "Nơi sinh:";
-            // 
-            // dtp_NgaySinh
-            // 
-            this.dtp_NgaySinh.Location = new System.Drawing.Point(25, 235);
-            this.dtp_NgaySinh.Name = "dtp_NgaySinh";
-            this.dtp_NgaySinh.Size = new System.Drawing.Size(280, 22);
-            this.dtp_NgaySinh.TabIndex = 8;
-            // 
-            // lbl_NgaySinh
-            // 
-            this.lbl_NgaySinh.Location = new System.Drawing.Point(25, 210);
-            this.lbl_NgaySinh.Name = "lbl_NgaySinh";
-            this.lbl_NgaySinh.Size = new System.Drawing.Size(100, 23);
-            this.lbl_NgaySinh.TabIndex = 9;
-            this.lbl_NgaySinh.Text = "Ngày sinh:";
-            // 
-            // txt_HoTen
-            // 
-            this.txt_HoTen.Location = new System.Drawing.Point(25, 165);
-            this.txt_HoTen.Name = "txt_HoTen";
-            this.txt_HoTen.Size = new System.Drawing.Size(280, 22);
-            this.txt_HoTen.TabIndex = 10;
-            // 
-            // lbl_HoTen
-            // 
-            this.lbl_HoTen.Location = new System.Drawing.Point(25, 140);
-            this.lbl_HoTen.Name = "lbl_HoTen";
-            this.lbl_HoTen.Size = new System.Drawing.Size(100, 23);
-            this.lbl_HoTen.TabIndex = 11;
-            this.lbl_HoTen.Text = "Họ và tên:";
-            // 
-            // txt_MaSV
-            // 
-            this.txt_MaSV.Location = new System.Drawing.Point(25, 95);
-            this.txt_MaSV.Name = "txt_MaSV";
-            this.txt_MaSV.Size = new System.Drawing.Size(280, 22);
-            this.txt_MaSV.TabIndex = 12;
-            // 
-            // lbl_MaSV
-            // 
-            this.lbl_MaSV.Location = new System.Drawing.Point(25, 70);
-            this.lbl_MaSV.Name = "lbl_MaSV";
-            this.lbl_MaSV.Size = new System.Drawing.Size(100, 23);
-            this.lbl_MaSV.TabIndex = 13;
-            this.lbl_MaSV.Text = "Mã sinh viên:";
-            // 
+            this.pnl_Left.Controls.Add(this.lbl_Title);
+            this.pnl_Left.Controls.Add(this.lbl_MaSV);
+            this.pnl_Left.Controls.Add(this.txt_MaSV);
+            this.pnl_Left.Controls.Add(this.lbl_HoSV);
+            this.pnl_Left.Controls.Add(this.txt_HoSV);
+            this.pnl_Left.Controls.Add(this.lbl_TenSV);
+            this.pnl_Left.Controls.Add(this.txt_TenSV);
+            this.pnl_Left.Controls.Add(this.lbl_Phai);
+            this.pnl_Left.Controls.Add(this.chk_Phai);
+            this.pnl_Left.Controls.Add(this.lbl_NgaySinh);
+            this.pnl_Left.Controls.Add(this.dtp_NgaySinh);
+            this.pnl_Left.Controls.Add(this.lbl_NoiSinh);
+            this.pnl_Left.Controls.Add(this.txt_NoiSinh);
+            this.pnl_Left.Controls.Add(this.lbl_MaKH);
+            this.pnl_Left.Controls.Add(this.cbo_MaKH);
+            this.pnl_Left.Controls.Add(this.lbl_HocBong);
+            this.pnl_Left.Controls.Add(this.txt_HocBong);
+            this.pnl_Left.Controls.Add(this.btn_Them);
+            this.pnl_Left.Controls.Add(this.btn_Sua);
+            this.pnl_Left.Controls.Add(this.btn_Xoa);
+            this.pnl_Left.Controls.Add(this.btn_LamMoi);
+
             // lbl_Title
-            // 
-            this.lbl_Title.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lbl_Title.Location = new System.Drawing.Point(20, 20);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(300, 30);
-            this.lbl_Title.TabIndex = 14;
-            this.lbl_Title.Text = "Thông tin sinh viên";
-            // 
+            this.lbl_Title.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            this.lbl_Title.Location = new Point(15, 15);
+            this.lbl_Title.Size = new Size(330, 30);
+            this.lbl_Title.Text = "Thong tin sinh vien";
+
+            this.lbl_MaSV.Location = new Point(15, 55); this.lbl_MaSV.Size = new Size(100, 20); this.lbl_MaSV.Text = "Ma SV:";
+            this.txt_MaSV.Location = new Point(15, 75); this.txt_MaSV.Size = new Size(330, 22); this.txt_MaSV.Name = "txt_MaSV";
+            this.lbl_HoSV.Location = new Point(15, 107); this.lbl_HoSV.Size = new Size(100, 20); this.lbl_HoSV.Text = "Ho:";
+            this.txt_HoSV.Location = new Point(15, 127); this.txt_HoSV.Size = new Size(330, 22); this.txt_HoSV.Name = "txt_HoSV";
+            this.lbl_TenSV.Location = new Point(15, 159); this.lbl_TenSV.Size = new Size(100, 20); this.lbl_TenSV.Text = "Ten:";
+            this.txt_TenSV.Location = new Point(15, 179); this.txt_TenSV.Size = new Size(330, 22); this.txt_TenSV.Name = "txt_TenSV";
+            this.lbl_Phai.Location = new Point(15, 211); this.lbl_Phai.Size = new Size(100, 20); this.lbl_Phai.Text = "Phai:";
+            this.chk_Phai.Location = new Point(15, 231); this.chk_Phai.Size = new Size(80, 22); this.chk_Phai.Text = "Nam"; this.chk_Phai.Checked = true; this.chk_Phai.Name = "chk_Phai";
+            this.lbl_NgaySinh.Location = new Point(15, 263); this.lbl_NgaySinh.Size = new Size(100, 20); this.lbl_NgaySinh.Text = "Ngay sinh:";
+            this.dtp_NgaySinh.Location = new Point(15, 283); this.dtp_NgaySinh.Size = new Size(330, 22); this.dtp_NgaySinh.Name = "dtp_NgaySinh"; this.dtp_NgaySinh.Format = DateTimePickerFormat.Short;
+            this.lbl_NoiSinh.Location = new Point(15, 315); this.lbl_NoiSinh.Size = new Size(100, 20); this.lbl_NoiSinh.Text = "Noi sinh:";
+            this.txt_NoiSinh.Location = new Point(15, 335); this.txt_NoiSinh.Size = new Size(330, 22); this.txt_NoiSinh.Name = "txt_NoiSinh";
+            this.lbl_MaKH.Location = new Point(15, 367); this.lbl_MaKH.Size = new Size(100, 20); this.lbl_MaKH.Text = "Ma KH:";
+            this.cbo_MaKH.Location = new Point(15, 387); this.cbo_MaKH.Size = new Size(330, 22); this.cbo_MaKH.Name = "cbo_MaKH"; this.cbo_MaKH.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.lbl_HocBong.Location = new Point(15, 419); this.lbl_HocBong.Size = new Size(100, 20); this.lbl_HocBong.Text = "Hoc bong:";
+            this.txt_HocBong.Location = new Point(15, 439); this.txt_HocBong.Size = new Size(330, 22); this.txt_HocBong.Name = "txt_HocBong";
+            this.btn_Them.BackColor = Color.LightBlue;   this.btn_Them.Location = new Point(15, 490);  this.btn_Them.Size = new Size(75, 35); this.btn_Them.Text = "Them";   this.btn_Them.Name = "btn_Them";
+            this.btn_Sua.BackColor  = Color.LightGreen;  this.btn_Sua.Location  = new Point(100, 490); this.btn_Sua.Size  = new Size(75, 35); this.btn_Sua.Text  = "Sua";    this.btn_Sua.Name  = "btn_Sua";
+            this.btn_Xoa.BackColor  = Color.LightCoral;  this.btn_Xoa.Location  = new Point(185, 490); this.btn_Xoa.Size  = new Size(75, 35); this.btn_Xoa.Text  = "Xoa";    this.btn_Xoa.Name  = "btn_Xoa";
+            this.btn_LamMoi.BackColor = Color.LightGray; this.btn_LamMoi.Location = new Point(270, 490); this.btn_LamMoi.Size = new Size(75, 35); this.btn_LamMoi.Text = "Lam moi"; this.btn_LamMoi.Name = "btn_LamMoi";
+
             // frm_admin
-            // 
-            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.ClientSize = new Size(1050, 650);
+            this.Controls.Add(this.pnl_Right);
             this.Controls.Add(this.pnl_Left);
-            this.Controls.Add(this.dgv_Admin_SinhVien);
             this.Name = "frm_admin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Hệ thống Quản trị Sinh viên";
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Text = "He thong Quan tri Sinh vien";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Admin_SinhVien)).EndInit();
+            this.pnl_Search.ResumeLayout(false);
+            this.pnl_Right.ResumeLayout(false);
             this.pnl_Left.ResumeLayout(false);
             this.pnl_Left.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
-        // Khai báo biến (Dán vào phía dưới cùng của file Designer)
-        private System.Windows.Forms.DataGridView dgv_Admin_SinhVien;
-        private System.Windows.Forms.Panel pnl_Left;
-        private System.Windows.Forms.TextBox txt_MaSV;
-        private System.Windows.Forms.Label lbl_MaSV;
-        private System.Windows.Forms.TextBox txt_HoTen;
-        private System.Windows.Forms.Label lbl_HoTen;
-        private System.Windows.Forms.DateTimePicker dtp_NgaySinh;
-        private System.Windows.Forms.Label lbl_NgaySinh;
-        private System.Windows.Forms.TextBox txt_NoiSinh;
-        private System.Windows.Forms.Label lbl_NoiSinh;
-        private System.Windows.Forms.TextBox txt_Lop;
-        private System.Windows.Forms.Label lbl_Lop;
-        private System.Windows.Forms.Label lbl_Title;
-        private System.Windows.Forms.Button btn_Them;
-        private System.Windows.Forms.Button btn_Sua;
-        private System.Windows.Forms.Button btn_Xoa;
-        private System.Windows.Forms.Button btn_LamMoi;
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-      
-        #endregion
+        private DataGridView dgv_Admin_SinhVien;
+        private Panel pnl_Left;
+        private Panel pnl_Right;
+        private Panel pnl_Search;
+        private Label lbl_Search;
+        private TextBox txt_Search;
+        private Button btn_Search;
+        private Label lbl_Title;
+        private Label lbl_MaSV;
+        private TextBox txt_MaSV;
+        private Label lbl_HoSV;
+        private TextBox txt_HoSV;
+        private Label lbl_TenSV;
+        private TextBox txt_TenSV;
+        private Label lbl_Phai;
+        private CheckBox chk_Phai;
+        private Label lbl_NgaySinh;
+        private DateTimePicker dtp_NgaySinh;
+        private Label lbl_NoiSinh;
+        private TextBox txt_NoiSinh;
+        private Label lbl_MaKH;
+        private ComboBox cbo_MaKH;
+        private Label lbl_HocBong;
+        private TextBox txt_HocBong;
+        private Button btn_Them;
+        private Button btn_Sua;
+        private Button btn_Xoa;
+        private Button btn_LamMoi;
     }
 }
